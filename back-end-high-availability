@@ -9,3 +9,31 @@ docker run \
 -v postgres_data:/var/lib/postgresql/data \
 -d postgres
 
+# create a table 
+create table if not exists student
+(
+    student_id integer primary key,
+    student_name varchar(20) not null,
+    student_dob date not null
+); 
+
+insert into student values
+(
+    1,'koty','13-aug-1986'
+);
+
+INSERT into student values 
+(
+    2,'nithya','08-apr-2015'
+);
+
+INSERT into student VALUES
+(
+    3,'sathya priya','09-jan-1991'
+);
+insert into student VALUES
+(
+    4,'munichanvita','10-jan-2020'
+);
+commit;
+
