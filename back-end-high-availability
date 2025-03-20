@@ -37,3 +37,9 @@ insert into student VALUES
 );
 commit;
 
+FROM python:3.9-slim
+WORK /apps
+CMD ["python3"]
+
+docker build -t python3-container .
+
