@@ -4,6 +4,7 @@ docker volume  create postgres_data
 #create a postgres with persistant data
 docker run \
 --name postgre-1 \
+-network net-1
 -e POSTGRES_PASSWORD=postgres \
 -p 5432:5432 \
 -v postgres_data:/var/lib/postgresql/data \
@@ -42,4 +43,8 @@ WORK /apps
 CMD ["python3"]
 
 docker build -t python3-container .
+
+#creating a network 
+docker network create net-1
+
 
